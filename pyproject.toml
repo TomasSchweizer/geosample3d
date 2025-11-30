@@ -1,0 +1,32 @@
+[build-system]
+requires = ["scikit-build-core>=0.11", "pybind11"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "geosample3d"
+version = "0.1.0"
+description = "Python package implementing fast CPU algorithms for Poisson Disk Sampling from Meshes and Farthest Point Sampling from Point Clouds. Based on pybind11 bindings on performant multi-threaded C++ code."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+
+dependencies = [
+    "numpy>=2.0",
+    "pybind11",
+
+]
+
+[project.optional-dependencies]
+test = [
+    "numpy>=2.0",
+]
+
+[tool.scikit-build]
+# Minimum CMake version required
+cmake.version = ">=3.15"
+# Set build directory structure
+build-dir = "build/{wheel_tag}"
+
+# Logging settings for easier debugging
+[tool.scikit-build.cmake.define]
+CMAKE_BUILD_TYPE = "Release"
