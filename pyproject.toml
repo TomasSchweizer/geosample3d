@@ -12,8 +12,6 @@ license = {text = "MIT"}
 
 dependencies = [
     "numpy>=2.0",
-    "pybind11",
-
 ]
 
 [project.optional-dependencies]
