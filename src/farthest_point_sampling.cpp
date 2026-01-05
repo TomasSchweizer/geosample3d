@@ -1,3 +1,4 @@
+#include "farthest_point_sampling.hpp"
 #include <cstddef> // for size_t
 #include <iostream>
 

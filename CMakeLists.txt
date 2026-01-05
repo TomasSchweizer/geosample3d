@@ -13,23 +13,11 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # --- Dependencies ---
 
 include(FetchContent)
-
-
-#set(NANOFLANN_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
-#set(NANOFLANN_BUILD_TESTS OFF CACHE BOOL "" FORCE)
-#set(NANOFLANN_BUILD_BENCHMARKS OFF CACHE BOOL "" FORCE)
-
-# nanoflann for KD-Tree implementation
-#FetchContent_Declare(
-#    nanoflann
-#    GIT_REPOSITORY https://github.com/jlblancoc/nanoflann
-#    GIT_TAG v1.8.0
-#)
-#FetchContent_MakeAvailable(nanoflann)
 
 # OpenMP for parallel processing
 find_package(OpenMP REQUIRED)
@@ -49,7 +37,6 @@ target_include_directories(geosample_core PUBLIC src/)
 
 # Link dependencies to core library
 target_link_libraries(geosample_core PRIVATE 
-    #nanoflann::nanoflann 
     OpenMP::OpenMP_CXX
 )
 

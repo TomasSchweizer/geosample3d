@@ -25,6 +25,7 @@ cmake.version = ">=3.15"
 # Set build directory structure
 build-dir = "build/{wheel_tag}"
 
+
 # Logging settings for easier debugging
 [tool.scikit-build.cmake.define]
 CMAKE_BUILD_TYPE = "Release"
